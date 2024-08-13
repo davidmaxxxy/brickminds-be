@@ -1,6 +1,6 @@
-# BrickMinds
+# BrickMinds Server Side
 
-**BrickMinds** is a web application built with **Express.js**, **MySQL**, and **Firebase** for media storage. The project aims to provide a scalable and efficient platform for [your project's purpose].
+**BrickMinds Server** is a API application built with **Express.js**, **MySQL**, and **Firebase** for media storage. The project aims to provide a scalable and efficient platform for adults to  select the perfect gift for a child's birthday..
 
 ## Table of Contents
 
