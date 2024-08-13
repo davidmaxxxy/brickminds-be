@@ -46,16 +46,16 @@ Direct Commits: Not allowed. Only merges from the dev branch.
 
 
 ## Development Branch
-Branch Name: dev
+Branch Name: Dev
 Purpose: The integration branch for all features.
 Direct Commits: Only merges from feature branches.
 
 
 ## Feature Branches
-Naming Convention: feature/ticket:<version>--<feature-description>
+Naming Convention: feature/ticket-<version>--<feature-description>
 Examples:
-feature/ticket:1.0--add-login-page
-feature/ticket:1.0--implement-signup-flow
+feature/ticket-1.0--add-login-page
+feature/ticket-1.0--implement-signup-flow
 
 
 
