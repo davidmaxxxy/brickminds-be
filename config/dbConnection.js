@@ -1,10 +1,11 @@
 const mysql = require("mysql");
+require("dotenv").config();
 
 const dbConnection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "bernard",
-  database: "lego_project_database",
+  host: process.env.DB_CONNECTION_ADDRESS,
+  user: process.env.DB_CONNECTION_USER,
+  password: process.env.DB_CONNECTION_PASSWORD,
+  database: process.env.DB_CONNECTION_DATABASE_NAME,
 });
 
 dbConnection.connect(function (err) {
@@ -15,6 +16,5 @@ dbConnection.connect(function (err) {
 
   console.log("connected as to lego_project_database ");
 });
-
 
 module.exports = dbConnection;
