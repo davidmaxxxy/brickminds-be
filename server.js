@@ -10,5 +10,5 @@ app.listen(PORT, (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.json({ message: "working" });
+  res("working ");
 });
