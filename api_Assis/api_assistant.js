@@ -2,7 +2,13 @@ const axios = require("axios");
 require("dotenv").config();
 
 // Function to generate a LEGO theme
-async function generateLegoTheme(age, likes, experienceLevel, giftAim) {
+async function generateLegoTheme(
+  availableThemesNamesInDb,
+  age,
+  likes,
+  experienceLevel,
+  giftAim
+) {
   const message = [
     {
       role: "system",
@@ -16,8 +22,9 @@ async function generateLegoTheme(age, likes, experienceLevel, giftAim) {
         - Likes: ${likes}
         - Building Experience Level: ${experienceLevel}
         - Gift Aim: ${giftAim}
+        - Available themes we have in our DataBase : ${availableThemesNamesInDb}
 
-        Suggest the top 3 LEGO themes that would be most appealing and be in the range only and it should be on the themes and no explanation  `,
+        Suggest the top 3 themes that would be most appealing and be in the Available themes we have in our DataBase only and it should be only the themes and no explanation  `,
     },
   ];
   try {
