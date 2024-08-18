@@ -17,14 +17,8 @@ async function generateLegoTheme(
     },
     {
       role: "user",
-      content: `Based on the following preferences:
-        - Age: ${age}
-        - Likes: ${likes}
-        - Building Experience Level: ${experienceLevel}
-        - Gift Aim: ${giftAim}
-        - Available themes we have in our DataBase : ${availableThemesNamesInDb}
-
-        Suggest the top 3 themes that would be most appealing and be in the Available themes we have in our DataBase only and it should be only the themes and no explanation  `,
+      content: `Please provide an array of 3 LEGO themes based on the user's preferences Age: ${age} ,Likes: ${likes} ,Building Experience Level: ${experienceLevel} ,Gift Aim: ${giftAim} 
+       and  Available themes we have in our DataBase : ${availableThemesNamesInDb} .  The output should be in the format: ["Theme1", "Theme2", "Theme3"] proper JSON array and no explanation `,
     },
   ];
   try {

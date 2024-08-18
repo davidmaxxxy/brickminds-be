@@ -4,7 +4,7 @@ const generateLegoThemeByOpenAi = require("../api_Assis/api_assistant");
 const dbConnection = require("../config/dbConnection");
 const Joi = require("joi");
 
-// Get all hotels
+// Get all Recommendations 
 router.post("/", async (req, res) => {
   try {
     const { age, priceRange, likes, experienceLevel, giftAim } = req.body;
@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
         // RES WITH REDIRECT TO GET PRODUCTS 
         return res.status(301).json({
           priceRange,
-          suggested_Themes: suggestedThemes,
+          suggested_Themes: JSON.parse(suggestedThemes),
         });
       });
     }
