@@ -4,12 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const helmet = require("helmet");
 require("dotenv").config();
-const PORT = process.env.PORT || 5000;
-
-
-
-
-
+const PORT = process.env.PORT || 5001;
 
 app.use(helmet());
 app.use(bodyParser.urlencoded({ extended: true }));

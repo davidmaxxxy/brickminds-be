@@ -4,10 +4,10 @@ const generateLegoThemeByOpenAi = require("../api_Assis/api_assistant");
 const dbConnection = require("../config/dbConnection");
 const Joi = require("joi");
 
-// Get all hotels
 router.post("/", async (req, res) => {
   try {
     const { age, priceRange, likes, experienceLevel, giftAim } = req.body;
+
     // Validate body
     const userRecommendationSchema = Joi.object({
       age: Joi.number().required(),
@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
       giftAim: Joi.string().required(),
       priceRange: Joi.string().required(),
     });
+
     const { error } = userRecommendationSchema.validate(req.body, {
       abortEarly: false,
     });
@@ -23,7 +24,7 @@ router.post("/", async (req, res) => {
     if (error) {
       return res.status(400).json({ message: error.details[0].message });
     } else {
-      // get all themes from DB
+      // Get all themes from DB
       dbConnection.query("SELECT * FROM themes", async (err, result) => {
         if (err) throw err;
 
@@ -32,8 +33,7 @@ router.post("/", async (req, res) => {
           return themeName;
         });
 
-
-        // GET RECOMMENDATION FROM OPENAI
+        // Get recommendation from OpenAI
         const suggestedThemes = await generateLegoThemeByOpenAi(
           availableThemesNamesInDb,
           age,
@@ -41,8 +41,8 @@ router.post("/", async (req, res) => {
           experienceLevel,
           giftAim
         );
-        
-        // RES WITH REDIRECT TO GET PRODUCTS 
+
+        // Respond with a redirect to get products
         return res.status(301).json({
           priceRange,
           suggested_Themes: suggestedThemes,
