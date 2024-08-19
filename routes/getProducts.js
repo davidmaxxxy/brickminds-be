@@ -5,22 +5,14 @@ const dbConnection = require("../config/dbConnection");
 
 router.post("/", (req, res) => {
   try {
-    const { priceRange, suggested_Themes } = req.body;
-
-    const userRecommendationSchema = Joi.object({
-      suggested_Themes: Joi.array().items(Joi.string()).required(),
-      priceRange: Joi.string().required(),
-    });
-
-    const { error } = userRecommendationSchema.validate(req.body, {
-      abortEarly: false,
-    });
-
-    if (error) {
-      return res.status(400).json({ message: error.details[0].message });
-    } else {
+    // const { priceRange, suggested_Themes } = req.body;
+    const priceRange = `${req.query.priceRange}`; 
+    const suggested_Themes = req.query.suggested_Themes;  
+    
+   
       const priceRanges = priceRange.split("-");
-      const query = `SELECT * FROM lego_products WHERE price BETWEEN ${
+      console.log('priceRange',priceRanges);
+      const query = `SELECT * FROM lego_products  WHERE price BETWEEN ${
         priceRanges[0]
       } AND ${priceRanges[1]} AND theme IN ('${suggested_Themes.join(
         "', '"
@@ -28,11 +20,12 @@ router.post("/", (req, res) => {
 
       dbConnection.query(query, (err, result) => {
         if (err) throw err;
+        console.log('result',result);
         return res.status(200).json({
           lego_products: result,
         });
       });
-    }
+    
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal Server Error" });
