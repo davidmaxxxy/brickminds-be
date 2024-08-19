@@ -38,6 +38,11 @@ async function generateLegoTheme(
       }
     );
 
+
+console.log('get called',{age,
+  likes,
+  experienceLevel,
+  giftAim});
     const suggestedThemes = response.data.choices[0].message.content.trim();
     return suggestedThemes.split("\n").map((theme) => theme.trim());
   } catch (error) {

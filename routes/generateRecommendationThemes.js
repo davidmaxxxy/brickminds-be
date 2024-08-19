@@ -41,9 +41,8 @@ router.post("/", async (req, res) => {
           experienceLevel,
           giftAim
         );
-        
         // RES WITH REDIRECT TO GET PRODUCTS 
-        return res.status(301).json({
+        return res.status(200).json({
           priceRange,
           suggested_Themes: JSON.parse(suggestedThemes),
         });
