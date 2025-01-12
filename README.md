@@ -1,4 +1,3 @@
-backend_readme: |
   # Lego Gift Finder - Backend
 
   Welcome to the Lego Gift Finder backend, which powers the Lego Gift Finder frontend by processing user inputs and returning Lego product recommendations based on criteria provided through the frontend survey.
