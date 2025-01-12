@@ -73,4 +73,4 @@ backend_readme: |
   - dotenv (for environment variable management)
 
   ## Contributors
-  - Your Name
+  - David Maksymiuk
