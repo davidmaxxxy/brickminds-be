@@ -1,0 +1,27 @@
+{
+  "name": "brickminds-server",
+  "version": "1.0.0",
+  "description": "**BrickMinds** is a web application built with **Express.js**, **MySQL**, and **Firebase** for media storage. The project aims to provide a scalable and efficient platform for [your project's purpose].",
+  "main": "./server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "industry-project-team-1",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.4",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "helmet": "^7.1.0",
+    "joi": "^17.13.3",
+    "mysql": "^2.18.1",
+    "openai": "^4.56.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
