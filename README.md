@@ -20,7 +20,7 @@ Parents often find it challenging to select the right Lego toys for their childr
 ### Steps to Run Locally:
   1. Clone the repository:
      ```bash
-     git clone https://github.com/your-username/lego-gift-finder-backend.git
+     [git clone https://github.com/your-username/lego-gift-finder-backend.git](https://github.com/davidmaxxxy/brickminds-be.git)
      ```
 
   2. Navigate to the project directory:
